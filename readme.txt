@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
 Requires Plugins: contact-form-7
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -115,6 +115,9 @@ Since version 2.1.1, Honeypot for Contact Form 7 has grown into a wider set of t
 
 == Changelog ==
 
+= 1.0.1 =
+* Security hardening: the wrapper ID and the CSS from the `wpcf7_honeypot_container_css` filter are sanitized before they are added to the inline stylesheet.
+
 = 1.0.0 =
 * First release of Classic Honeypot for CF7, forked from Honeypot for Contact Form 7 2.1.1 by Nocean.
 * New name, slug and text domain (`classic-honeypot-for-cf7`). Internal prefixes changed from `honeypot4cf7` to `choneypot4cf7`.
@@ -223,6 +226,9 @@ Small update for W3C compliance.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Security hardening of the inline CSS that hides the honeypot field.
 
 = 1.0.0 =
 First release. If you use Honeypot for Contact Form 7, deactivate it before activating this plugin; your settings will be imported.

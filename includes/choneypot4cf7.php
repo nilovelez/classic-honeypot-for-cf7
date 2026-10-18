@@ -124,7 +124,8 @@ function choneypot4cf7_form_tag_handler( $tag ) {
 
 	$unique_id = uniqid( 'wpcf7-' );
 
-	$wrapper_id = $atts['wrapper_id'];
+	// The wrapper ID is also used as a CSS selector, so keep only safe characters.
+	$wrapper_id = sanitize_html_class( $atts['wrapper_id'] );
 	if ( empty( $wrapper_id ) ) {
 		$wrapper_id = $unique_id . '-wrapper';
 	}
@@ -143,7 +144,8 @@ function choneypot4cf7_form_tag_handler( $tag ) {
 		$handle = $unique_id . '-inline';
 		wp_register_style( $handle, false, array(), CHONEYPOT4CF7_VERSION );
 		wp_enqueue_style( $handle );
-		wp_add_inline_style( $handle, '#' . $wrapper_id . ' {' . $atts['css'] . '}' );
+		// Strip tags so filtered CSS can't close the style element.
+		wp_add_inline_style( $handle, '#' . $wrapper_id . ' {' . wp_strip_all_tags( $atts['css'] ) . '}' );
 		$style_attribute = '';
 	} else {
 		$style_attribute = ' style="' . esc_attr( $atts['css'] ) . '"';
