@@ -2,11 +2,13 @@
 
 GPL fork of Honeypot for Contact Form 7 2.1.1 (Nocean), renamed Classic Honeypot for CF7 and free of ads. Milestones 1 to 5 are finished and merged into `main`. Milestone 5 set up the development environment (Playground with a blueprint, a Studio site linked to the repo and reachable from the local network, MCP Adapter connected to Claude Code), which will serve as the basis for a public skill. Local folder and GitHub repo renamed to the slug `classic-honeypot-for-cf7`.
 
-**Blocked:** waiting for the manual review by the WordPress.org plugin team (resubmitted for the third time on 2026-10-14; the reviewer handling the appeal said he will continue the review himself).
+**Approved** by the WordPress.org plugin team on 2026-10-18 with the slug `classic-honeypot-for-cf7` (no reply needed). Version 1.0.1 (branch `fix/inline-css-sanitizing`) hardens the inline CSS flagged by the automated pre-review.
 
-**Next step:** wait for the manual review and address whatever they ask by replying to their email (do not resubmit unless they ask); if approved, upload the code to trunk, create the 1.0.0 tag and upload `assets/` to SVN.
+**Next step:** merge 1.0.1 after Nilo's review, then, once the SVN credentials email arrives, upload the code to trunk, create the 1.0.1 tag and upload `assets/` to SVN, step by step.
 
 ## Log
+
+- 2026-10-18: Approved by WordPress.org. The automated pre-review (AI-assisted) had flagged three things: Guideline 11 (the two admin notices are justified error notices, kept), the name and the "CF7" trademark (the manual reviewers approved it as is, kept), and unescaped inline CSS in `includes/choneypot4cf7.php`. For the last one, 1.0.1 sanitizes the wrapper ID with `sanitize_html_class()` and strips tags from the filtered CSS. Tested in Playground: a `</style><script>` returned by the `wpcf7_honeypot_container_css` filter reached the page before the fix and is removed after it.
 
 - 2026-10-16: migrated to the new Guppy format (STATUS.json).
 
