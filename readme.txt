@@ -5,7 +5,7 @@ Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
 Requires Plugins: contact-form-7
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,6 +114,9 @@ Since version 2.1.1, Honeypot for Contact Form 7 has grown into a wider set of t
 2. Honeypot form tag settings in the CF7 editor
 
 == Changelog ==
+
+= 1.0.2 =
+* Tested with WordPress 7.1.4 and Contact Form 7 6.2.4.1. No code changes were needed: the changes in these releases do not affect the honeypot field, the time check, the form-tag generator or the settings page.
 
 = 1.0.1 =
 * Security hardening: the wrapper ID and the CSS from the `wpcf7_honeypot_container_css` filter are sanitized before they are added to the inline stylesheet.
@@ -226,6 +229,9 @@ Small update for W3C compliance.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Tested with WordPress 7.1.4 and Contact Form 7 6.2.4.1. No functional changes.
 
 = 1.0.1 =
 Security hardening of the inline CSS that hides the honeypot field.
