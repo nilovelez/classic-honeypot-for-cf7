@@ -4,9 +4,13 @@ GPL fork of Honeypot for Contact Form 7 2.1.1 (Nocean), renamed Classic Honeypot
 
 **Published** on WordPress.org: https://wordpress.org/plugins/classic-honeypot-for-cf7/ (version 1.0.2, tested with WordPress 7.1.4 and Contact Form 7 6.2.4.1). Also released on GitHub. The SVN working copy is at `D:\repos-svn\classic-honeypot-for-cf7`; Nilo makes the SVN commits with TortoiseSVN, or asks Claude to commit (the command-line `svn` uses the cached credentials).
 
+**Status:** inactive. No work in progress; reopen for maintenance when WordPress or Contact Form 7 releases need checking, or a support request comes in.
+
 **Next step:** maintenance and support. For each new version: bump the version, `composer lint`, Plugin Check on the extracted zip, merge into `main`, GitHub release with the zip, then copy the `git archive` zip into SVN `trunk/`, `svn copy` it to `tags/<version>/` and give Nilo the commit message.
 
 ## Log
+
+- 2026-10-30: Maintenance task closed. Status set to inactive. Everything committed and pushed; lessons logged in `wp-agentic-workflow/docs/lessons-learned.md`. The Studio site is stopped, updated to WordPress 7.1.4 and Contact Form 7 6.2.4.1.
 
 - 2026-10-30: 1.0.2 published on WordPress.org (SVN r3774907, committed by Claude at Nilo's request). The plugin API shows 1.0.2 and the download is identical to the `git archive` zip. GitHub release `1.0.2` with the zip (the repo's first release; tags without "v", like SVN).
 
