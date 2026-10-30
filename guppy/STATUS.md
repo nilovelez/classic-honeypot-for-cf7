@@ -4,9 +4,13 @@ GPL fork of Honeypot for Contact Form 7 2.1.1 (Nocean), renamed Classic Honeypot
 
 **Published** on WordPress.org: https://wordpress.org/plugins/classic-honeypot-for-cf7/ (version 1.0.1). The SVN working copy is at `D:\repos-svn\classic-honeypot-for-cf7`; Nilo makes the SVN commits with TortoiseSVN.
 
-**Next step:** maintenance and support. For each new version: bump the version, `composer lint`, Plugin Check, merge into `main`, then copy the `git archive` zip into SVN `trunk/`, `svn copy` it to `tags/<version>/` and give Nilo the commit message.
+**Version 1.0.2** (tested with WordPress 7.1.4 and Contact Form 7 6.2.4.1, no code changes) is released on GitHub and prepared in the SVN working copy (`trunk/` and `tags/1.0.2/`), waiting for Nilo's SVN commit.
+
+**Next step:** after the SVN commit, check the plugin API and the download, then maintenance and support. For each new version: bump the version, `composer lint`, Plugin Check on the extracted zip, merge into `main`, GitHub release with the zip, then copy the `git archive` zip into SVN `trunk/`, `svn copy` it to `tags/<version>/` and give Nilo the commit message.
 
 ## Log
+
+- 2026-10-30: 1.0.2 prepared: tested with WordPress 7.1.4 and Contact Form 7 6.2.4.1 (Playground: human submission sent; honeypot, too fast, future start and missing start time flagged as spam; settings menu, settings page and tag generator OK; clean debug.log). CF7 6.2.2 to 6.2.4.1 diff reviewed: only file uploads, UTF-8 scrubbing, REST permission callbacks and the dashboard; nothing the plugin uses. WordPress 7.1.4 is a security release. Plugin Check on the extracted zip: clean (run on the repo folder it flags `.claude`, `.github`, `CLAUDE.md` and the untracked `code-reference/`, all outside the zip). The Studio site can't start unattended: it asks for UAC permission to edit the hosts file even though the entries exist.
 
 - 2026-10-18: 1.0.1 published on WordPress.org (SVN r3753510): code in `trunk/` and `tags/1.0.1/`, images in `assets/` with `svn:mime-type=image/png`. The WordPress.org download is identical to the `git archive` zip. WordPress.org now delays plugin updates by six hours. WPCS set up in the repo with Composer (`composer lint`) from the workflow templates.
 
