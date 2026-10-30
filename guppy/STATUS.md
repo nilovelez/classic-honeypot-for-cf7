@@ -2,13 +2,13 @@
 
 GPL fork of Honeypot for Contact Form 7 2.1.1 (Nocean), renamed Classic Honeypot for CF7 and free of ads. Milestones 1 to 5 are finished and merged into `main`. Milestone 5 set up the development environment (Playground with a blueprint, a Studio site linked to the repo and reachable from the local network, MCP Adapter connected to Claude Code), which will serve as the basis for a public skill. Local folder and GitHub repo renamed to the slug `classic-honeypot-for-cf7`.
 
-**Published** on WordPress.org: https://wordpress.org/plugins/classic-honeypot-for-cf7/ (version 1.0.1). The SVN working copy is at `D:\repos-svn\classic-honeypot-for-cf7`; Nilo makes the SVN commits with TortoiseSVN.
+**Published** on WordPress.org: https://wordpress.org/plugins/classic-honeypot-for-cf7/ (version 1.0.2, tested with WordPress 7.1.4 and Contact Form 7 6.2.4.1). Also released on GitHub. The SVN working copy is at `D:\repos-svn\classic-honeypot-for-cf7`; Nilo makes the SVN commits with TortoiseSVN, or asks Claude to commit (the command-line `svn` uses the cached credentials).
 
-**Version 1.0.2** (tested with WordPress 7.1.4 and Contact Form 7 6.2.4.1, no code changes) is released on GitHub and prepared in the SVN working copy (`trunk/` and `tags/1.0.2/`), waiting for Nilo's SVN commit.
-
-**Next step:** after the SVN commit, check the plugin API and the download, then maintenance and support. For each new version: bump the version, `composer lint`, Plugin Check on the extracted zip, merge into `main`, GitHub release with the zip, then copy the `git archive` zip into SVN `trunk/`, `svn copy` it to `tags/<version>/` and give Nilo the commit message.
+**Next step:** maintenance and support. For each new version: bump the version, `composer lint`, Plugin Check on the extracted zip, merge into `main`, GitHub release with the zip, then copy the `git archive` zip into SVN `trunk/`, `svn copy` it to `tags/<version>/` and give Nilo the commit message.
 
 ## Log
+
+- 2026-10-30: 1.0.2 published on WordPress.org (SVN r3774907, committed by Claude at Nilo's request). The plugin API shows 1.0.2 and the download is identical to the `git archive` zip. GitHub release `1.0.2` with the zip (the repo's first release; tags without "v", like SVN).
 
 - 2026-10-30: 1.0.2 prepared: tested with WordPress 7.1.4 and Contact Form 7 6.2.4.1 (Playground: human submission sent; honeypot, too fast, future start and missing start time flagged as spam; settings menu, settings page and tag generator OK; clean debug.log). CF7 6.2.2 to 6.2.4.1 diff reviewed: only file uploads, UTF-8 scrubbing, REST permission callbacks and the dashboard; nothing the plugin uses. WordPress 7.1.4 is a security release. Plugin Check on the extracted zip: clean (run on the repo folder it flags `.claude`, `.github`, `CLAUDE.md` and the untracked `code-reference/`, all outside the zip). The Studio site can't start unattended: it asks for UAC permission to edit the hosts file even though the entries exist.
 
